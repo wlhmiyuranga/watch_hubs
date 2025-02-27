@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronos Accessories</title>
+    <link rel="stylesheet" href="Accessories.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="accessories-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Essential Companions</h1>
+            <p>Elevate Your Timekeeping Experience</p>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <nav class="category-nav">
+        <div class="category-card">
+            <img src="images\Straps.jpg" class="category-image" alt="Straps">
+            <div class="category-name">Premium Straps</div>
+        </div>
+        <div class="category-card">
+            <img src="images\cases.jpg" class="category-image" alt="Cases">
+            <div class="category-name">Designer Cases</div>
+        </div>
+        <!-- Add more categories -->
+    </nav>
+
+    <!-- Products Grid -->
+    <main class="accessories-grid">
+        <!-- Product Card 1 -->
+        <div class="product-card">
+           
+            <img src="images\Leather.jpg" class="product-image" alt="Leather Strap">
+           
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="product-card">
+            
+            <img src="images\Travel.jpg" class="product-image" alt="Travel Case">
+            
+        </div>
+        <!-- Add more products -->
+    </main>
+
+    <!-- Featured Collection -->
+    <section class="featured-collection">
+        <img src="images\inside.jpg" class="featured-image" alt="Featured Collection">
+        <div class="featured-content">
+            <h2>Artisan Collection</h2>
+            <p>Handcrafted accessories made with precision and passion</p>
+            <button class="cta-button">Explore Collection</button>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <h2>Stay Updated</h2>
+        <p>Receive exclusive access to new collections and special offers</p>
+       
+    </section>
+
+    <script>
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Animate product cards
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            observer.observe(card);
+        });
+
+        // Animate featured collection
+        document.querySelectorAll('.featured-collection').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            observer.observe(section);
+        });
+
+        // Category card hover effect
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('mouseover', () => {
+                card.querySelector('.category-image').style.transform = 'scale(1.05)';
+            });
+            
+            card.addEventListener('mouseout', () => {
+                card.querySelector('.category-image').style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

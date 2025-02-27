@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronos Collections</title>
+    <link rel="stylesheet" href="Collections.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="collection-hero">
+        <div class="hero-content">
+            <h1 class="collection-title">Master Collection</h1>
+            <p>Timeless Elegance Redefined</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <div class="collection-filters">
+        <button class="filter-btn active">Solar</button>
+        <button class="filter-btn">Mechanical</button>
+        <button class="filter-btn">Automatic</button>
+        <button class="filter-btn">Quartz</button>
+    </div>
+
+    <!-- Watch Grid -->
+    <main class="collection-grid">
+        <!-- Watch Card 1 -->
+        <div class="watch-card">
+            <div class="quick-view">Quick View</div>
+            <img src="images\Quartz.jpg" class="watch-image" alt="Heritage Chronograph">
+         
+        </div>
+
+        <!-- Watch Card 2 -->
+        <div class="watch-card">
+            <div class="quick-view">Quick View</div>
+            <img src="images\sola.jpg" class="watch-image" alt="Royal Automaton">
+            
+        </div>
+
+        <!-- Add more watch cards -->
+    </main>
+    
+
+    <!-- Modal -->
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <!-- Modal content will be injected via JS -->
+        </div>
+    </div>
+
+    <script>
+        // Quick View Modal
+        const quickViews = document.querySelectorAll('.quick-view');
+        const modalOverlay = document.querySelector('.modal-overlay');
+        const modalClose = document.querySelector('.modal-close');
+
+        quickViews.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modalOverlay.style.display = 'flex';
+                setTimeout(() => {
+                    document.querySelector('.modal-content').style.transform = 'scale(1)';
+                    document.querySelector('.modal-content').style.opacity = '1';
+                }, 10);
+            });
+        });
+
+        modalClose.addEventListener('click', () => {
+            document.querySelector('.modal-content').style.transform = 'scale(0.8)';
+            document.querySelector('.modal-content').style.opacity = '0';
+            setTimeout(() => {
+                modalOverlay.style.display = 'none';
+            }, 300);
+        });
+
+        // Filter Functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                // Add filter logic here
+            });
+        });
+
+        // Scroll Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.watch-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

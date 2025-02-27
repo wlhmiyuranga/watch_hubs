@@ -1,0 +1,209 @@
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('https://images.unsplash.com/photo-1523170335258-f5ed11844a49?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-content {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease-out forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-family: 'Times New Roman', serif;
+    letter-spacing: 3px;
+}
+
+/* Brand Story Section */
+.brand-story {
+    padding: 5rem 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.story-text {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s ease;
+}
+
+.story-text.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.story-text h2 {
+    font-size: 2.5rem;
+    color: #c5a47e;
+    margin-bottom: 2rem;
+}
+
+.story-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.story-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    transform: scale(0.95);
+    transition: all 0.5s ease;
+}
+
+.story-img:hover {
+    transform: scale(1);
+}
+
+/* Timeline Section */
+.timeline {
+    padding: 5rem 10%;
+    background: #1a1a1a;
+}
+
+.timeline-item {
+    position: relative;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-left: 2px solid #c5a47e;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1s ease;
+}
+
+.timeline-year {
+    position: absolute;
+    left: -25px;
+    top: 0;
+    background: #c5a47e;
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Team Section */
+.team-section {
+    padding: 5rem 10%;
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.team-member {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.team-member img {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.team-member:hover img {
+    transform: scale(1.05);
+}
+
+.member-info {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: rgba(0,0,0,0.8);
+    transition: all 0.5s ease;
+}
+
+.team-member:hover .member-info {
+    bottom: 0;
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a;
+    padding: 3rem 10%;
+    text-align: center;
+}
+
+.social-links {
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: #c5a47e;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ffffff;
+}
+
+/* Animations */
+@keyframes rotateGears {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.scroll-animation {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+}
+
+.scroll-animation.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+

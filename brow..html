@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Watch Brands | Chronos</title>
+    <link rel="stylesheet" href="brow.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="brands-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Explore your choices</h1>
+            <p>Explore the World's Finest Watch Brands</p>
+        </div>
+    </section>
+
+    <!-- Brands Grid -->
+    <main class="brands-grid">
+        <!-- Brand Card 1 -->
+        <div class="brand-card">
+            <img src="images\Rolex.jpg" class="brand-image" alt="Rolex">
+            <div class="brand-overlay">
+                <h3 class="brand-name">Rolex</h3>
+                <p class="brand-description">Swiss luxury watchmaker known for precision and elegance.</p>
+            </div>
+        </div>
+
+        <!-- Brand Card 2 -->
+        <div class="brand-card">
+            <img src="images\skmi.jpg" class="brand-image" alt="Patek Philippe">
+            <div class="brand-overlay">
+                <h3 class="brand-name">SKMI</h3>
+                <p class="brand-description">Synonymous with timeless sophistication and innovation.</p>
+            </div>
+        </div>
+
+        <!-- Add more brand cards -->
+    </main>
+
+    <!-- Featured Brand Section -->
+    <section class="featured-brand">
+        <img src="images\hamiltion.jpg" class="featured-brand-image" alt="Audemars Piguet">
+        <div class="featured-brand-content">
+            <h2 class="featured-brand-title">Hamilton</h2>
+            <p>Discover Hamilton men's, women's and automatic watches which embody American Spirit and Swiss Precision. Including Khaki, Ventura and Jazzmaster ...</p>
+            <button class="cta-button">Explore Collection</button>
+        </div>
+    </section>
+
+    <script>
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Animate brand cards
+        document.querySelectorAll('.brand-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            observer.observe(card);
+        });
+
+        // Animate featured brand section
+        document.querySelectorAll('.featured-brand').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            observer.observe(section);
+        });
+
+        // Image hover effect
+        document.querySelectorAll('.brand-card').forEach(card => {
+            card.addEventListener('mouseover', () => {
+                card.querySelector('.brand-image').style.transform = 'scale(1.05)';
+            });
+            
+            card.addEventListener('mouseout', () => {
+                card.querySelector('.brand-image').style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

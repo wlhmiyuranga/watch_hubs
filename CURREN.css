@@ -1,0 +1,229 @@
+
+:root {
+    --gold: #d4af37;
+    --dark: #1a1a1a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--dark);
+    color: white;
+}
+
+.product-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.product-gallery {
+    flex: 1;
+    min-width: 300px;
+}
+
+.main-image {
+    width: 100%;
+    height: 500px;
+    background: #333;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.thumbnail:hover {
+    border-color: var(--gold);
+}
+
+.product-details {
+    flex: 1;
+    min-width: 300px;
+}
+
+.product-title {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: var(--gold);
+}
+
+.product-price {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.product-description {
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.specifications {
+    margin-bottom: 40px;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.spec-item {
+    padding: 15px;
+    background: #2a2a2a;
+    border-radius: 5px;
+}
+
+.spec-label {
+    color: var(--gold);
+    font-size: 0.9rem;
+}
+
+.spec-value {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.add-to-cart {
+    background: var(--gold);
+    color: black;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.add-to-cart:hover {
+    background: #b6952e;
+}
+
+.quantity-selector {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 8px;
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: white;
+    text-align: center;
+}
+
+.wishlist-btn {
+    background: none;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 12px 25px;
+    margin-left: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+    }
+    
+    .main-image {
+        height: 400px;
+    }
+}
+.add-to-cart {
+    background-color: #ee8c4f; /* Orange background */
+    color: white; /* White text */
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.add-to-cart i {
+    transition: transform 0.3s ease-in-out;
+}
+
+.add-to-cart:hover {
+    background-color: #e65c00; /* Darker orange */
+}
+
+.add-to-cart:hover i {
+    transform: translateX(5px); /* Move arrow slightly */
+}
+/* Style for the thumbnail container */
+.thumbnails {
+    display: flex;
+    justify-content: center; /* Centers thumbnails horizontally */
+    align-items: center; /* Centers thumbnails vertically */
+    gap: 20px; /* Space between thumbnails */
+    flex-wrap: wrap; /* Allow thumbnails to wrap to next line on smaller screens */
+    padding: 20px;
+  }
+  
+  /* Style for each individual thumbnail */
+  .thumbnail {
+    width: 150px; /* Fixed width for each thumbnail */
+    height: 150px; /* Fixed height for each thumbnail */
+    overflow: hidden; /* Hides any part of the image that goes out of bounds */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  /* Style for the image inside the thumbnail */
+  .thumbnail img {
+    width: 100%; /* Makes the image fill the entire thumbnail */
+    height: 100%; /* Ensures the image covers the entire area */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio and fills the box */
+  }
+  
+  /* Hover effect for the thumbnail */
+  .thumbnail:hover {
+    transform: scale(1.05); /* Slightly enlarge the thumbnail */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+  }
+  

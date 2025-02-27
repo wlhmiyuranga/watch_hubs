@@ -1,0 +1,1462 @@
+/* General Reset */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
+header {
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #422e2e;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1C1C1C;
+    font-size: 16px;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #1C1C1C;
+    transition: 0.3s;
+    margin-top: 5px;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+/* HAMBURGER MENU */
+
+#hamburger-nav {
+    display: none;
+  }
+  .hamburger-menu {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+  }
+  .hamburger-icon span {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transition: all 0.3 ease-in-out;
+  }
+  .menu-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3 ease-in-out;
+  }
+  .menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+  }
+  .menu-links li {
+    list-style: none;
+  }
+  .menu-links.open {
+    max-height: 300px;
+  }
+  .hamburger-icon.open span:first-child {
+    transform: rotate(45deg) translate(10px, 5px);
+  }
+  
+  .hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger-icon.open span:last-child {
+    transform: rotate(-45deg) translate(10px, -5px);
+  }
+  
+  .hamburger-icon span:first-child {
+    transform: none;
+  }
+  
+  .hamburger-icon span:first-child {
+    opacity: 1;
+  }
+  
+  .hamburger-icon span:first-child {
+    transform: none;
+  }
+  
+
+/* Icons */
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons i, .icons a {
+    margin-left: 15px;
+    color: #1C1C1C;
+    text-decoration: none;
+}
+
+.cart {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background: brown;
+    color: white;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 2px 6px;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('');
+    background-size: 50%; /* Makes the image 50% of the section’s size */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Ensures no repetition */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    color: white;
+}
+
+.left {
+    width: 40%;
+}
+
+.left img {
+    width: 100%;
+    max-width: 600px;
+}
+
+.right {
+    width: 60%;
+    padding-left: 50px;
+}
+
+.right h1 {
+    font-size: 36px;
+    color: #6B3F3F;
+}
+
+.right p {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0 20px;
+}
+
+.right button {
+    background: #1C1C1C;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.right button:hover {
+    background: #6B3F3F;
+}
+
+/* Carousel */
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.carousel-images {
+    display: flex;
+    overflow: hidden;
+    width: 80%;
+}
+
+.carousel-images img {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 10px;
+    transition: transform 0.5s ease;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background: #ccc;
+    margin: 0 5px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: #1C1C1C;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        background: white;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    .right {
+        padding: 20px 0;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .icons {
+        flex-direction: column;
+    }
+
+    .carousel-images img {
+        max-width: 250px;
+    }
+}
+/* Brand Slider Section */
+.brand-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Slider Wrapper */
+.slider-wrapper {
+    width: 80%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Slider */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Slider Images */
+.slider img {
+    width: 150px;
+    margin: 0 20px;
+    object-fit: contain;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.prev {
+    left: 20px;
+    color: brown;
+}
+
+.next {
+    right: 20px;
+    color: gray;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slider img {
+        width: 100px;
+    }
+
+    .prev, .next {
+        font-size: 18px;
+    }
+}
+/* Latest Additions Section */
+.latest-additions {
+    padding: 40px;
+    text-align: left;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.latest-additions h2 {
+    font-size: 24px;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+/* Product Grid */
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Individual Product */
+.product {
+    width: 18%;
+    background: #f8f8f8;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+/* Product Image */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.image-container img {
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+/* Zoom Icon */
+.zoom-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    border-radius: 50%;
+    padding: 8px;
+    font-size: 14px;
+    color: black;
+    display: none;
+}
+
+.image-container:hover .zoom-icon {
+    display: block;
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.add-to-cart:hover {
+    background: black;
+    color: white;
+}
+
+/* Product Name & Price */
+.product-name {
+    font-size: 16px;
+    color: #1a1a1a;
+    margin-top: 10px;
+}
+
+.product-price {
+    font-size: 14px;
+    color: brown;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .product {
+        width: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    .product {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        width: 100%;
+    }
+}
+/* Accessories Section */
+.accessories-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f4f4f4;
+    padding: 60px 80px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Left Content */
+.content {
+    flex: 1;
+    text-align: left;
+}
+
+.content h3 {
+    font-size: 20px;
+    color: #1a1a4c;
+    margin-bottom: 5px;
+}
+
+.content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #1a1a4c;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Discover Button */
+.discover-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #1a1a4c;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+.discover-btn:hover {
+    background: #333366;
+}
+
+/* Right Image */
+.image {
+    flex: 1;
+    text-align: right;
+}
+
+.image img {
+    max-width: 90%;
+    height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .accessories-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .image {
+        margin-top: 20px;
+    }
+}
+/* Follow Us Section */
+.follow-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    padding: 60px 80px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Left Text Content */
+.follow-text {
+    flex: 1;
+    text-align: left;
+    max-width: 350px;
+}
+
+.follow-text h3 {
+    font-size: 18px;
+    color: #1a1a4c;
+    margin-bottom: 10px;
+}
+
+.follow-text h1 {
+    font-size: 42px;
+    font-weight: bold;
+    color: #1a1a4c;
+    margin-bottom: 10px;
+}
+
+.follow-text p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Right Image Grid */
+.follow-grid {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.follow-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.follow-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .follow-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .follow-text {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .follow-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .follow-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+/* Hero Section Styles */
+
+  /* Footer Section */
+.footer-section {
+  background-color: #f8f9fa;
+  color: #5a5a5a;
+  padding: 2rem 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-logo img {
+  width: 200px;
+  height: auto;
+}
+
+.footer-about, .footer-payment, .footer-contact {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-about h4, 
+.footer-payment h4, 
+.footer-contact h4 {
+  font-size: 1rem;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.footer-about p, 
+.footer-contact p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer-payment img {
+  width: 50px;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+.footer-payment a {
+  margin-right: 0.5rem;
+  color: #5a5a5a;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.footer-payment a:hover {
+  color: #000;
+}
+
+.footer-bottom {
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-bottom a {
+  color: #5a5a5a;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom p {
+  margin: 0.5rem 0;
+}
+/* From Uiverse.io by Praashoo7 */ 
+.loader {
+    position: relative;
+    background-color: white;
+    padding-left: 5.5em;
+    padding-right: 5.5em;
+    padding-top: 6.5em;
+    top: -0.4em;
+    border-radius: 25px;
+    z-index: -2;
+    box-shadow: 5px 6px 0px #666666;
+  }
+  
+  .clock {
+    position: relative;
+    top: -1.4em;
+    left: 0.05em;
+  }
+  
+  .stage {
+    position: relative;
+    left: 0.5em;
+    background-color: black;
+    width: 4em;
+    height: .4em;
+    border-radius: 15px;
+    box-shadow: 2px 2px 0px #666666;
+    z-index: 4;
+  }
+  
+  .hold {
+    position: relative;
+    background-color: limegreen;
+    width: 0.1em;
+    height: 4em;
+    left: 2.5em;
+    top: -.25em;
+    animation: 1.3s dangle infinite;
+    box-shadow: 4px 4px 0px #666666;
+    z-index: -1;
+  }
+  
+  @keyframes dangle {
+    0% {
+      transform-origin: top center;
+      transform: rotate(45deg);
+    }
+  
+    50% {
+      transform-origin: top center;
+      transform: rotate(-45deg);
+    }
+  
+    100% {
+      transform-origin: top center;
+      transform: rotate(45deg);
+    }
+  }
+  
+  .ball {
+    display: inline-block;
+    position: relative;
+    top: 3em;
+    left: -1.2em;
+    width: 2.5em;
+    height: 2.5em;
+    margin: 0;
+    border-radius: 50%;
+    background: #171717;
+    box-shadow: 1px 1px 0px #666666;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #000;
+    margin-top: 5px;
+}
+/* From Uiverse.io by gharsh11032000 */ 
+.button {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -4px;
+  top: -1px;
+  margin: auto;
+  width: 128px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.button:hover::after {
+  filter: blur(30px);
+}
+
+.button:hover::before {
+  transform: rotate(-180deg);
+}
+
+.button:active::before {
+  scale: 0.7;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #000;
+    margin-top: 5px;
+}
+
+/* From Uiverse.io by Mohammad-Rahme-576 */ 
+/* Container Styles */
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    font-family: "Arial", sans-serif;
+    overflow: visible;
+  }
+  
+  /* Button Styles */
+  .button-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition:
+      background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+      transform 0.3s ease,
+      box-shadow 0.4s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+  }
+  
+  .button-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      rgba(110, 142, 251, 0.4),
+      rgba(167, 119, 227, 0.4)
+    );
+    filter: blur(15px);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+  }
+  
+  .button-content::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    transform: scale(0);
+    transition: transform 0.6s ease-out;
+    z-index: -1;
+  }
+  
+  .button-content:hover::before {
+    opacity: 1;
+  }
+  
+  .button-content:hover::after {
+    transform: scale(1);
+  }
+  
+  .button-content:hover {
+    background: linear-gradient(135deg, #a777e3, #6e8efb);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px) scale(1.03);
+  }
+  
+  .button-content:active {
+    transform: translateY(-2px) scale(0.98);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .text {
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 12px;
+    white-space: nowrap;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: letter-spacing 0.3s ease;
+  }
+  
+  .button-content:hover .text {
+    letter-spacing: 1px;
+  }
+  
+  .share-icon {
+    fill: white;
+    transition:
+      transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+      fill 0.3s ease;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+  }
+  
+  .button-content:hover .share-icon {
+    transform: rotate(180deg) scale(1.1);
+    fill: #ffffff;
+  }
+  
+  /* Tooltip Styles */
+  .tooltip-content {
+    position: absolute;
+    top: 102%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    background: white;
+    border-radius: 15px;
+    padding: 22px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+      transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+      visibility 0.5s ease;
+    z-index: 100;
+    pointer-events: none;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  .tooltip-container:hover .tooltip-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) scale(1);
+    pointer-events: auto;
+  }
+  
+  /* Social Icons Styles */
+  .social-icons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  
+  .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    transition:
+      transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+      background 0.3s ease,
+      box-shadow 0.4s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .social-icon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .social-icon:hover::before {
+    opacity: 1;
+  }
+  
+  .social-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #333;
+    transition:
+      transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+      fill 0.3s ease;
+    z-index: 1;
+  }
+  
+  .social-icon:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .social-icon:active {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .social-icon:hover svg {
+    transform: scale(1.2);
+    fill: white;
+  }
+  
+  .social-icon.twitter:hover {
+    background: linear-gradient(135deg, #1da1f2, #1a91da);
+  }
+  
+  .social-icon.facebook:hover {
+    background: linear-gradient(135deg, #1877f2, #165ed0);
+  }
+  
+  .social-icon.linkedin:hover {
+    background: linear-gradient(135deg, #0077b5, #005e94);
+  }
+  
+  /* Animation for Pulse Effect */
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(110, 142, 251, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 20px rgba(110, 142, 251, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(110, 142, 251, 0);
+    }
+  }
+  
+  .button-content {
+    animation: pulse 3s infinite;
+  }
+  
+  /* Hover Ripple Effect */
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+  
+  .button-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: inherit;
+    transform: scale(0);
+    opacity: 0;
+  }
+  
+  .button-content:active::before {
+    animation: ripple 0.6s linear;
+  }
+  
+  /* Tooltip Arrow */
+  .tooltip-content::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent rgba(255, 255, 255, 0.9) transparent;
+    filter: drop-shadow(0 -3px 3px rgba(0, 0, 0, 0.1));
+  }
+  
+  /* Accessibility */
+  .button-content:focus {
+    outline: none;
+    box-shadow:
+      0 0 0 3px rgba(110, 142, 251, 0.5),
+      0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .button-content:focus:not(:focus-visible) {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .button-content {
+      padding: 12px 24px;
+      border-radius: 40px;
+    }
+  
+    .text {
+      font-size: 16px;
+    }
+  
+    .tooltip-content {
+      width: 240px;
+      padding: 18px;
+    }
+  
+    .social-icon {
+      width: 44px;
+      height: 44px;
+    }
+  
+    .social-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .button-content {
+      padding: 10px 20px;
+    }
+  
+    .text {
+      font-size: 14px;
+    }
+  
+    .tooltip-content {
+      width: 200px;
+      padding: 15px;
+    }
+  
+    .social-icon {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .social-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+  /* Dark Mode Support */
+  @media (prefers-color-scheme: dark) {
+    .tooltip-content {
+      background: rgba(30, 30, 30, 0.9);
+      color: white;
+    }
+  
+    .tooltip-content::before {
+      border-color: transparent transparent rgba(30, 30, 30, 0.9) transparent;
+    }
+  
+    .social-icon {
+      background: #2a2a2a;
+    }
+  
+    .social-icon svg {
+      fill: #e0e0e0;
+    }
+  }
+  
+  /* Print Styles */
+  @media print {
+    .tooltip-container {
+      display: none;
+    }
+  }
+  
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .button-content,
+    .share-icon,
+    .social-icon,
+    .tooltip-content {
+      transition: none;
+    }
+  
+    .button-content {
+      animation: none;
+    }
+  }
+  
+  /* Custom Scrollbar for Tooltip Content */
+  .tooltip-content::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .tooltip-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+  
+  .tooltip-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+  }
+  
+  .tooltip-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  /* From Uiverse.io by SelfMadeSystem */ 
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.3rem;
+    --stroke: #666;
+    --fill: #ffc73a;
+    
+  }
+  
+  .rating input {
+    appearance: unset;
+   
+  }
+  
+  .rating label {
+    cursor: pointer;
+  }
+  
+  .rating svg {
+    width: 2rem;
+    height: 2rem;
+    overflow: visible;
+    fill: transparent;
+    stroke: var(--stroke);
+    stroke-linejoin: bevel;
+    stroke-dasharray: 12;
+    animation: idle 4s linear infinite;
+    transition: stroke 0.2s, fill 0.5s;
+  }
+  
+  @keyframes idle {
+    from {
+      stroke-dashoffset: 24;
+    }
+  }
+  
+  .rating label:hover svg {
+    stroke: var(--fill);
+    
+  }
+  
+  .rating input:checked ~ label svg {
+    transition: 0s;
+    animation: idle 4s linear infinite, yippee 0.75s backwards;
+    fill: var(--fill);
+    stroke: var(--fill);
+    stroke-opacity: 0;
+    stroke-dasharray: 0;
+    stroke-linejoin: miter;
+    stroke-width: 8px;
+    
+  }
+  
+  @keyframes yippee {
+    0% {
+      transform: scale(1);
+      fill: var(--fill);
+      fill-opacity: 0;
+      stroke-opacity: 1;
+      stroke: var(--stroke);
+      stroke-dasharray: 10;
+      stroke-width: 1px;
+      stroke-linejoin: bevel;
+    }
+  
+    30% {
+      transform: scale(0);
+      fill: var(--fill);
+      fill-opacity: 0;
+      stroke-opacity: 1;
+      stroke: var(--stroke);
+      stroke-dasharray: 10;
+      stroke-width: 1px;
+      stroke-linejoin: bevel;
+    }
+  
+    30.1% {
+      stroke: var(--fill);
+      stroke-dasharray: 0;
+      stroke-linejoin: miter;
+      stroke-width: 8px;
+    }
+  
+    60% {
+      transform: scale(1.2);
+      fill: var(--fill);
+    }
+  }
+
+  .rating {
+    display: flex; /* Arrange stars horizontally */
+    gap: 8px; /* Add spacing between stars */
+    width: 100%;
+    padding: 20px;
+  }
+  /* From Uiverse.io by vinodjangid07 */ 
+.loade {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.truckWrapper {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: flex-end;
+  overflow-x: hidden;
+}
+/* truck upper body */
+.truckBody {
+  width: 130px;
+  height: fit-content;
+  margin-bottom: 6px;
+  animation: motion 1s linear infinite;
+}
+/* truck suspension animation*/
+@keyframes motion {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+/* truck's tires */
+.truckTires {
+  width: 130px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px 0px 15px;
+  position: absolute;
+  bottom: 0;
+}
+.truckTires svg {
+  width: 24px;
+}
+
+.road {
+  width: 100%;
+  height: 1.5px;
+  background-color: #282828;
+  position: relative;
+  bottom: 0;
+  align-self: flex-end;
+  border-radius: 3px;
+}
+.road::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  background-color: #282828;
+  right: -50%;
+  border-radius: 3px;
+  animation: roadAnimation 1.4s linear infinite;
+  border-left: 10px solid white;
+}
+.road::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  background-color: #282828;
+  right: -65%;
+  border-radius: 3px;
+  animation: roadAnimation 1.4s linear infinite;
+  border-left: 4px solid white;
+}
+
+.lampPost {
+  position: absolute;
+  bottom: 0;
+  right: -90%;
+  height: 90px;
+  animation: roadAnimation 1.4s linear infinite;
+}
+
+@keyframes roadAnimation {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-350px);
+  }
+}

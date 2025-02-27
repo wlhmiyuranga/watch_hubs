@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronos Craft - About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>More than just time</h1>
+            <p>Since 2024</p>
+        </div>
+    </section>
+
+    <!-- Brand Story -->
+    <section class="brand-story">
+        <div class="story-text scroll-animation">
+            <h2>Our vison..</h2>
+            <p>The Grand Hour is a luxury watches and jewellery collection that you can find your most needed fashion without any doubt. Further, you can send us your imagination watch and make it yours. We are highly guaranteed that we protect the trust you keep in us !.</p>
+        </div>
+        <div class="story-images">
+            <img src="images\cropped_image (2).png" class="story-img" alt="Watch Crafting">
+            <img src="images\cropped_image (3).png" class="story-img" alt="Watch Components">
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline">
+        <div class="timeline-item scroll-animation">
+            <div class="timeline-year">2021</div>
+            <h3>Founding Year</h3>
+            <p>Established in Sri Lanka</p>
+        </div>
+        <div class="timeline-item scroll-animation">
+            <div class="timeline-year">2024</div>
+            <h3>First Chronograph</h3>
+            <p>Introducing our first collection</p>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <h2 class="scroll-animation">0077 HOLDING</h2>
+        <div class="team-grid">
+            <div class="team-member scroll-animation">
+                <img src="images\logo.jpeg" alt="Master Watchmaker">
+                <div class="member-info">
+                    <h3>WLN.MADHURANGA</h3>
+                    <p>Founder</p>
+                </div>
+            </div>
+            <!-- Add more team members -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="scroll-animation">
+            <p>© 2024 NOVA by Hima. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Animation Trigger
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.scroll-animation').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // Parallax Effect for Hero Section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            document.querySelector('.hero-section').style.backgroundPositionY = `${scrolled * 0.5}px`;
+        });
+    </script>
+</body>
+</html>
